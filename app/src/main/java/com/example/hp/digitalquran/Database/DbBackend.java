@@ -130,6 +130,21 @@ public class DbBackend extends DbObject {
         ayat_array = ayat_text_array.toArray(ayat_array);
         return ayat_array;
     }
+    public String[] Translation_Text() {
+        String query = "Select * from Translation_Ahmedali";
+        Cursor cursor = this.getDbConnection().rawQuery(query, null);
+        ArrayList<String> translation_text_array = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                String translation_text = cursor.getString(cursor.getColumnIndexOrThrow("text"));
+                translation_text_array.add(translation_text);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        String[] translation_array = new String[translation_text_array.size()];
+        translation_array = translation_text_array.toArray(translation_array);
+        return translation_array;
+    }
     public String[] Surah_Text(int index) {
         String query = "Select * from quran_text where sura="+index;
         Cursor cursor = this.getDbConnection().rawQuery(query, null);

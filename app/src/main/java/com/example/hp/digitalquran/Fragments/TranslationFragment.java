@@ -33,9 +33,9 @@ public class TranslationFragment extends Fragment {
         DbBackend db=new DbBackend(getContext());
 
         String[] arabic_text = db.Ayat_Text();
-        String[] ayat_number = db.Ayat_No();
+        String[] translation_text = db.Translation_Text();
 
-        listAdapter = new TranslationAdapter(getContext(),ayat_number,arabic_text);
+        listAdapter = new TranslationAdapter(getContext(),translation_text,arabic_text);
 
         itemList.setAdapter(listAdapter);
 

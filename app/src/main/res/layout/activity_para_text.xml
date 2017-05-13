@@ -20,16 +20,16 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:src="@drawable/bismillah2"/>
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/quran_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:gravity="center_vertical"
-            android:minHeight="?android:attr/listPreferredItemHeightSmall" />
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/quran_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:gravity="center_vertical"
+                android:minHeight="?android:attr/listPreferredItemHeightSmall" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

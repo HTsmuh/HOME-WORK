@@ -40,7 +40,7 @@ public class ParaText extends AppCompatActivity {
             relativeLayout.setBackgroundDrawable(portrait);
         }
         quranText= (TextView) findViewById(R.id.quran_text);
-        tf = Typeface.createFromAsset(getAssets(), "fonts/pdms.ttf");
+        tf = Typeface.createFromAsset(getAssets(), "fonts/me_quran.ttf");
         quranText.setTypeface(tf);
 
         Intent intent = getIntent();

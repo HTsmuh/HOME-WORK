@@ -208,11 +208,20 @@ public class DbBackend extends DbObject {
         String query = "Select * from quran_text where para="+index;
         Cursor cursor = this.getDbConnection().rawQuery(query, null);
         ArrayList<String> quran_text_array = new ArrayList<>();
+        ArrayList<String> second = new ArrayList<>();
+        ArrayList<String> first = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
                 String text = cursor.getString(cursor.getColumnIndexOrThrow("text"));
-                quran_text_array.add(text);
+                String num = cursor.getString(cursor.getColumnIndexOrThrow("aya_no"));
+                first.add(text);
+                second.add(num);
             } while (cursor.moveToNext());
+
+            for(int i = 0; i < first.size(); i++) {
+                quran_text_array.add(first.get(i));
+                quran_text_array.add(second.get(i));
+            }
         }
         cursor.close();
         String[] quran_text = new String[quran_text_array.size()];

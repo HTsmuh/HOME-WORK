@@ -22,14 +22,17 @@ public class ParaNameAdapter extends ArrayAdapter<String> {
     public String[] para_no_array;
     public String[] para_arabic_array;
     public String[] para_roman_array;
+    public String[] para_verse_array;
+    String abc="Total Verses : ";
     Typeface tf;
 
-    public ParaNameAdapter(Context context, String[] para_no, String[] parah_arabic, String[] para_roman) {
+    public ParaNameAdapter(Context context, String[] para_no, String[] parah_arabic, String[] para_roman,String[] para_verse) {
         super(context, R.layout.activity_single_row,R.id.text1,parah_arabic);
         this.context=context;
         this.para_no_array=para_no;
         this.para_arabic_array=parah_arabic;
         this.para_roman_array=para_roman;
+        this.para_verse_array=para_verse;
         tf = Typeface.createFromAsset(context.getAssets(), "fonts/pdms.ttf");
 
     }
@@ -41,9 +44,11 @@ public class ParaNameAdapter extends ArrayAdapter<String> {
         TextView arabic= (TextView) row.findViewById(R.id.text1);
         TextView roman= (TextView) row.findViewById(R.id.text2);
         TextView number= (TextView) row.findViewById(R.id.text3);
+        TextView verse= (TextView) row.findViewById(R.id.text4);
         ImageView imagetype= (ImageView) row.findViewById(R.id.image1);
         arabic.setText(para_arabic_array[position]);
         roman.setText(para_roman_array[position]);
+        verse.setText(String.format("%s%s", abc, para_verse_array[position]));
         number.setText(para_no_array[position]);
         imagetype.setImageResource(R.drawable.logo);
         arabic.setTypeface(tf);

@@ -2,8 +2,13 @@ package com.example.hp.digitalquran.Database;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DbBackend extends DbObject {
     public DbBackend(Context context) {
@@ -55,6 +60,21 @@ public class DbBackend extends DbObject {
         surah_number = surah_number_array.toArray(surah_number);
         return surah_number;
     }
+    public String[] Surah_Verses() {
+        String query = "Select * from Surah_Names";
+        Cursor cursor = this.getDbConnection().rawQuery(query, null);
+        ArrayList<String> surah_verses_array = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                String verse = cursor.getString(cursor.getColumnIndexOrThrow("verses"));
+                surah_verses_array.add(verse);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        String[] surah_verses = new String[surah_verses_array.size()];
+        surah_verses = surah_verses_array.toArray(surah_verses);
+        return surah_verses;
+    }
     public String[] para_arabic() {
         String query = "Select * from Parah_Names";
         Cursor cursor = this.getDbConnection().rawQuery(query, null);
@@ -99,6 +119,21 @@ public class DbBackend extends DbObject {
         String[] para_number = new String[para_number_array.size()];
         para_number = para_number_array.toArray(para_number);
         return para_number;
+    }
+    public String[] para_Verses() {
+        String query = "Select * from Parah_Names";
+        Cursor cursor = this.getDbConnection().rawQuery(query, null);
+        ArrayList<String> para_verses_array = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                String total_verse = cursor.getString(cursor.getColumnIndexOrThrow("verses"));
+                para_verses_array.add(total_verse);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        String[] verse_total = new String[para_verses_array.size()];
+        verse_total = para_verses_array.toArray(verse_total);
+        return verse_total;
     }
     public String[] Ayat_No() {
         String query = "Select * from quran_text";
@@ -149,11 +184,20 @@ public class DbBackend extends DbObject {
         String query = "Select * from quran_text where sura="+index;
         Cursor cursor = this.getDbConnection().rawQuery(query, null);
         ArrayList<String> quran_text_array = new ArrayList<>();
+        ArrayList<String> second = new ArrayList<>();
+        ArrayList<String> first = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
                 String text = cursor.getString(cursor.getColumnIndexOrThrow("text"));
-                quran_text_array.add(text);
+                String num = cursor.getString(cursor.getColumnIndexOrThrow("aya_no"));
+                first.add(text);
+                second.add(num);
             } while (cursor.moveToNext());
+
+            for(int i = 0; i < first.size(); i++) {
+                quran_text_array.add(first.get(i));
+                quran_text_array.add(second.get(i));
+            }
         }
         cursor.close();
         String[] quran_text = new String[quran_text_array.size()];

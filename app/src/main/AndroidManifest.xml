@@ -19,9 +19,9 @@
         </activity>
         <activity android:name=".Fragments.MainActivity" />
         <activity android:name=".SurahText"
-            android:theme="@style/MyAppTheme"/>
+            android:theme="@style/SplashTheme"/>
         <activity android:name=".ParaText"
-            android:theme="@style/MyAppTheme"/>
+            android:theme="@style/SplashTheme"/>
     </application>
 
 </manifest>

@@ -41,8 +41,9 @@ public class ParaFragment extends Fragment {
         String[] para_numbers = dbFragment.para_No();
         String[] para_names = dbFragment.para_arabic();
         String[] para_roman_names = dbFragment.para_roman();
+        String[] para_total_verses = dbFragment.para_Verses();
 
-        listAdapter = new ParaNameAdapter(getContext(),para_numbers,para_names,para_roman_names);
+        listAdapter = new ParaNameAdapter(getContext(),para_numbers,para_names,para_roman_names,para_total_verses);
 
         itemList.setAdapter(listAdapter);
         itemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

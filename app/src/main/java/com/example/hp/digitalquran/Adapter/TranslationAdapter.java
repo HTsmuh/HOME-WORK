@@ -29,7 +29,7 @@ public class TranslationAdapter extends ArrayAdapter<String> {
         this.ayat_translation_array=ayat_translation;
         this.ayat_arabic_array=ayat_arabic;
         //this.ayat_roman_array=ayat_roman;
-        tf = Typeface.createFromAsset(context.getAssets(), "fonts/pdms.ttf");
+        tf = Typeface.createFromAsset(context.getAssets(), "fonts/me_quran.ttf");
 
     }
     @NonNull

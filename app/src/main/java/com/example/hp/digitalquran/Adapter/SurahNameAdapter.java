@@ -21,15 +21,18 @@ public class SurahNameAdapter extends ArrayAdapter<String> {
     public String[] surah_no_array;
     public String[] surah_arabic_array;
     public String[] surah_roman_array;
+    public String[] surah_verse_array;
     public int[] surah_type_images;
+    String abc="Total Verses : ";
     Typeface tf;
 
-    public SurahNameAdapter(Context context, String[] surah_no, String[] surah_arabic, String[] surah_roman, int[] surah_type) {
+    public SurahNameAdapter(Context context, String[] surah_no, String[] surah_arabic, String[] surah_roman,String[] surah_verse, int[] surah_type) {
         super(context, R.layout.activity_single_row,R.id.text1,surah_arabic);
         this.context=context;
         this.surah_no_array=surah_no;
         this.surah_arabic_array=surah_arabic;
         this.surah_roman_array=surah_roman;
+        this.surah_verse_array=surah_verse;
         this.surah_type_images=surah_type;
 
         tf = Typeface.createFromAsset(context.getAssets(), "fonts/pdms.ttf");
@@ -42,9 +45,11 @@ public class SurahNameAdapter extends ArrayAdapter<String> {
         TextView arabic= (TextView) row.findViewById(R.id.text1);
         TextView roman= (TextView) row.findViewById(R.id.text2);
         TextView number= (TextView) row.findViewById(R.id.text3);
+        TextView verse= (TextView) row.findViewById(R.id.text4);
         ImageView imagetype= (ImageView) row.findViewById(R.id.image1);
         arabic.setText(surah_arabic_array[position]);
         roman.setText(surah_roman_array[position]);
+        verse.setText(String.format("%s%s", abc, surah_verse_array[position]));
         number.setText(surah_no_array[position]);
         imagetype.setImageResource(surah_type_images[position]);
         arabic.setTypeface(tf);

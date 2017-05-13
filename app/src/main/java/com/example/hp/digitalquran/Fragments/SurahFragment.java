@@ -38,8 +38,9 @@ public class SurahFragment extends Fragment {
         String[] surah_numbers = dbFragment.surah_No();
         String[] surah_names = dbFragment.surah_arabic();
         String[] surah_roman_names = dbFragment.surah_roman();
+        String[] surah_verse_no = dbFragment.Surah_Verses();
 
-        listAdapter = new SurahNameAdapter(getContext(),surah_numbers,surah_names,surah_roman_names,typeimage);
+        listAdapter = new SurahNameAdapter(getContext(),surah_numbers,surah_names,surah_roman_names,surah_verse_no,typeimage);
 
         itemList.setAdapter(listAdapter);
         itemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -27,7 +27,7 @@ public class ParaNameAdapter extends ArrayAdapter<String> {
     Typeface tf;
 
     public ParaNameAdapter(Context context, String[] para_no, String[] parah_arabic, String[] para_roman,String[] para_verse) {
-        super(context, R.layout.activity_single_row,R.id.text1,parah_arabic);
+        super(context, R.layout.activity_single_row,R.id.translationUrduText,parah_arabic);
         this.context=context;
         this.para_no_array=para_no;
         this.para_arabic_array=parah_arabic;
@@ -41,8 +41,8 @@ public class ParaNameAdapter extends ArrayAdapter<String> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row=inflater.inflate(R.layout.activity_single_row,parent,false);
-        TextView arabic= (TextView) row.findViewById(R.id.text1);
-        TextView roman= (TextView) row.findViewById(R.id.text2);
+        TextView arabic= (TextView) row.findViewById(R.id.translationUrduText);
+        TextView roman= (TextView) row.findViewById(R.id.translationArabicText);
         TextView number= (TextView) row.findViewById(R.id.text3);
         TextView verse= (TextView) row.findViewById(R.id.text4);
         ImageView imagetype= (ImageView) row.findViewById(R.id.image1);

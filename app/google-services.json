@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:607905462018:android:957bb3bed93cbcaa",
         "android_client_info": {
-          "package_name": "com.example.hp.digitalquran"
+          "package_name": "com.horizontech.biz.digitalquran"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "607905462018-kv7uhvi801oh395jsc90ns7cf7lmpjtu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.hp.digitalquran",
+            "package_name": "com.horizontech.biz.digitalquran",
             "certificate_hash": "653c9b20cadea98fece905de270e5b59271eb4ca"
           }
         },

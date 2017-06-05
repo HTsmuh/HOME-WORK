@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dayModBackgroundColor"
-    tools:context="com.example.hp.digitalquran.Menu.CreditsActivity">
+    android:background="#fff"
+    tools:context="com.horizontech.biz.digitalquran.Menu.CreditsActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
